@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cardist.ntrtest.ui.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_default_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/quarter_default_margin"
+            android:textSize="@dimen/google_subhead_text_size"
+            android:textColor="@color/black"
+            tools:text="@string/name_text"/>
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/quarter_default_margin"
+            android:textSize="@dimen/google_subhead_text_size"
+            android:textColor="@color/black"
+            tools:text="@string/type_text"/>
+
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/quarter_default_margin"
+            android:textSize="@dimen/google_subhead_text_size"
+            android:textColor="@color/black"
+            tools:text="@string/phone_text"/>
+
+        <TextView
+            android:id="@+id/cityText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/quarter_default_margin"
+            android:textSize="@dimen/google_subhead_text_size"
+            android:textColor="@color/black"
+            tools:text="@string/city_text"/>
+
+        <TextView
+            android:id="@+id/streetText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/quarter_default_margin"
+            android:textSize="@dimen/google_subhead_text_size"
+            android:textColor="@color/black"
+            tools:text="@string/street_text"/>
+
+    </LinearLayout>
+
+</ScrollView>

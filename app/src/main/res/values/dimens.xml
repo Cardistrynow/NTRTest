@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="half_default_margin">8dp</dimen>
+    <dimen name="quarter_default_margin">4dp</dimen>
+    <dimen name="minimal_default_margin">2dp</dimen>
+    <dimen name="double_default_margin">32dp</dimen>
+    <dimen name="triple_default_margin">48dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="default_elevation">4dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="google_display3_text_size">56sp</dimen>
+    <dimen name="google_display2_text_size">45sp</dimen>
+    <dimen name="google_display1_text_size">34sp</dimen>
+    <dimen name="google_headline_text_size">24sp</dimen>
+    <dimen name="google_title_text_size">20sp</dimen>
+    <dimen name="google_subhead_text_size">16sp</dimen>
+    <dimen name="google_body_text_size">14sp</dimen>
+    <dimen name="google_caption_text_size">12sp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+
+</resources>
