@@ -15,7 +15,7 @@ public class MainModel {
     private String type;
 
     @SerializedName("address")
-    private Address address;
+    private AddressModel address;
 
     @SerializedName("phone")
     private String phone;
@@ -32,28 +32,11 @@ public class MainModel {
         return type;
     }
 
-    public Address getAddress() {
+    public AddressModel getAddress() {
         return address;
     }
 
     public String getPhone() {
         return phone;
-    }
-
-    public class Address {
-
-        @SerializedName("city")
-        private String city;
-
-        @SerializedName("street")
-        private String street;
-
-        public String getCity() {
-            return city;
-        }
-
-        public String getStreet() {
-            return street;
-        }
     }
 }

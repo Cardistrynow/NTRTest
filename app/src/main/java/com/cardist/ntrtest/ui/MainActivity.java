@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.cardist.ntrtest.BuildConfig;
 import com.cardist.ntrtest.R;
 import com.cardist.ntrtest.data.ApiService;
-import com.cardist.ntrtest.data.Exceptions.RetrofitException;
 import com.cardist.ntrtest.model.MainModel;
 import com.cardist.ntrtest.utils.NetworkUtils;
 import com.google.gson.Gson;
@@ -25,13 +24,12 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Retrofit retrofit;
 
     private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
@@ -87,13 +85,7 @@ public class MainActivity extends AppCompatActivity {
         return retrofitInit().requestData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.trampoline())
-                .map(response -> {
-                    if (!response.isSuccessful()) {
-                        throw RetrofitException.httpError(response.raw().request().url().toString(), response, retrofit);
-                    }
-
-                    return response.body();
-                })
+                .map(Response::body)
                 .onErrorResumeNext(throwable -> {
                     return Observable.error(throwable);
                 })
@@ -119,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 .setLenient()
                 .create();
 
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(NetworkUtils.URL_BACKEND)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
